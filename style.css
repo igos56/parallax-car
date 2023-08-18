@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    overflow: hidden;
+    height: 100%;
+}
+body {
+    background-color: rgb(181, 218, 239);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    perspective: 1px;
+}
+.block {
+    background-color: rgb(136, 129, 129);
+    height: 100vh;
+    position: relative;
+    display: grid;
+    align-items: center;
+    padding: 0 5vw;
+    transform-style: preserve-3d;
+}
+.block > * {
+    position: relative;
+}
+.block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100%;
+    background-position: center;
+    box-shadow: 0 2px 8px #000;
+}
+.block_1,
+.block_3 {
+    z-index: 1;
+}
+.block_3 {
+    justify-content: end;
+}
+.block_1,
+.block_5 {
+    display: grid;
+    justify-items: center;
+    font-size: 100px;
+    color:rgb(255, 255, 255);
+    text-shadow: 2px 4px 8px #000;
+}
+.block_2,
+.block_4 {
+    background-color: transparent;
+}
+.block_1::before {
+    background-image: url(./img/car_1.jpg);
+}
+.block_2::before {
+    background-image: url(./img/car_2.jpg);
+}
+.block_3::before {
+    background-image: url(./img/car_3.jpg);
+}
+.block_4::before {
+    background-image: url(./img/car_4.jpg);
+}
+.block_5::before {
+    background-image: url(./img/car_5.jpg);
+}
+.card {
+    width: 50vw;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, .6);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .6);
+    border: 1px solid rgba(255, 255, 255, .6);
+    backdrop-filter: blur(2px);
+}
+.card__title {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+.card__description {
+    font-size: 18px;
+    line-height: 1.6em;
+}
+.mini-card {
+    position: absolute;
+    width: 320px;
+    padding: 6px;
+    background-color: rgba(255, 255, 255, .6);
+}
+.card1 {
+    top: 12vw;
+    left: 20vw;
+}
+.card2 {
+    top: 20vw;
+    left: 14vw;
+}
+
+/* Parallax */
+h1 {
+    transform: translateZ(0.25px) scale(0.6);
+}
+.block_2::before,
+.block_4::before {
+    transform: translateZ(-1px) scale(2);
+}
+.card1 {
+    transform: rotate(5deg) translateZ(0.1px) scale(0.85)
+}
+.card2 {
+    transform: translateZ(0.25px) scale(0.7)
+}
